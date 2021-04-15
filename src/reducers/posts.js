@@ -15,7 +15,7 @@ export default (posts = [], action) => {
 
        case UPDATE:
        case LIKEPOST:    
-            return posts.map((post) => post.id === action.id ? action.payload : post )
+            return posts.map((post) => post._id === action.payload._id ? action.payload : post )
        
        case DELETE:
              return posts.filter((post) => post._id !== action.payload);     
